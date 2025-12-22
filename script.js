@@ -116,7 +116,7 @@ const updateLogic = () => {
                 emailjs.send(serviceID, templateID, templateParams)
                     .then(() => {
                         alert("Your  info has been updated.");
-                        window.location.href = "login.html";
+                        window.location.href = "index.html";
                     })
                     .catch((err) => {
                         console.error("FAILED:", err);
@@ -136,4 +136,5 @@ document.addEventListener("DOMContentLoaded", () => {
     trackingData();
     loginLogic();
     updateLogic();
+
 });
